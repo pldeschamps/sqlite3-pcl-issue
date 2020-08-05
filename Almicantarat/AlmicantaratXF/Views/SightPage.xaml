@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.SightPage"
+             xmlns:i18n="clr-namespace:AlmicantaratXF.Views;assembly=AlmicantaratXF"
+             xmlns:viewModels="clr-namespace:AlmicantaratXF.ViewModels;assembly=AlmicantaratXF"
+             xmlns:model="clr-namespace:AlmicantaratXF.Model"
+             xmlns:converters="clr-namespace:AlmicantaratXF.Converters;assembly=AlmicantaratXF"
+             xmlns:behaviors="clr-namespace:AlmicantaratXF.Behaviors"
+             Title="{i18n:Translate titleSight}"
+             BackgroundColor="{StaticResource AppBackgroundColor}">
+    <!--   Title="{i18n:Translate titleSight}">     -->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 5" />
+            <On Platform="Android, UWP" Value="10, 0, 10, 5" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" >
+                <Setter Property="Keyboard" Value="Numeric" />
+            </Style>
+            <converters:SelectedItemToBool x:Key="selectedItemToBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{i18n:Translate buttonDelete}" Clicked="OnDelete" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout"
+            Orientation="Vertical"
+            Margin ="0"
+            Padding="0">
+            <Button Text="{i18n:Translate buttonSelectOnSkyView}"
+                    Clicked="OnSelectOnSkyClicked"
+                    Command="{Binding SelectOnSkyViewCommand}"
+                    />
+            <StackLayout Orientation="Horizontal"
+                         Margin ="0"
+                         Padding="0"
+                         HorizontalOptions="FillAndExpand" >
+                <Label Text="{i18n:Translate labelBodyType}"
+                       WidthRequest="110"
+                       Margin="0"/>
+                <Picker
+                    x:Name="PickerBodyType" 
+                        Title="{i18n:Translate labelBodyType}"
+                        ItemsSource="{Binding BodyTypes}"
+                        SelectedIndex="{Binding BodyTypeSelectedIndex}"
+                        WidthRequest="120"
+                        Margin="0">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin ="0"
+                         Padding="0"
+                         HorizontalOptions="FillAndExpand" >
+                <Label Text="{i18n:Translate limb}"
+                       WidthRequest="110"
+                       Margin="0"
+                       BindingContext="{x:Reference Name=PickerBodyType}"
+                       IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=1}" />
+                <Picker 
+                        x:Name="PickerLimb"
+                        Title="{i18n:Translate limb}"
+                        WidthRequest="120"
+                        Margin="0"
+                        ItemsSource="{Binding Limb, Mode=TwoWay}"
+                        SelectedIndex="{Binding LimbSelectedIndex}"
+                        IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=1}">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin ="0"
+                         Padding="0"
+                         HorizontalOptions="FillAndExpand" >
+                <Label Text="{i18n:Translate planet}"
+                       WidthRequest="110" 
+                       Margin="0"
+                       IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=2}" />
+                <Picker 
+                        Title="{i18n:Translate planet}"   
+                        WidthRequest="120"
+                        Margin="0"
+                        ItemsSource="{Binding PlanetsItemsSource, Mode=TwoWay}"
+                        SelectedIndex="{Binding PickerPlanetsSelectedIndex}"
+                        IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=2}" >
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin ="0"
+                         Padding="0"
+                         HorizontalOptions="FillAndExpand" >
+                <Label Text="{i18n:Translate star}" 
+                       WidthRequest="110" 
+                       Margin="0"
+                       IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=3}" />
+                <Picker
+                        Title="{i18n:Translate star}"   
+                        WidthRequest="120" 
+                        Margin="0"
+                        ItemsSource="{Binding StarsCollection, Mode=TwoWay}"
+                        SelectedIndex="{Binding PickerStarsSelectedIndex}"
+                        IsVisible="{Binding Source ={x:Reference PickerBodyType},
+                                           Path=SelectedIndex,
+                                           Converter= {StaticResource selectedItemToBool},
+                                           ConverterParameter=3}" >
+                </Picker>
+            </StackLayout>
+            
+            <!-- CURRENT TIME -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0">
+             <!--   x:DataType="viewModels:ClockViewModel">-->
+
+                <Label Text="{i18n:Translate labelCurrentTime}"
+                    WidthRequest="140"/>
+                <Label Text="{Binding DateTimeString}"
+                       TextColor="{StaticResource LabelInfoTextColor}">
+                </Label>
+            </StackLayout>
+            
+            <!-- CURRENT LOCATION -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Margin ="0"
+                         Padding="0">
+                <Label Text="{i18n:Translate lat}"
+                       WidthRequest="140" />
+                <Label x:Name="labelLat"
+                       Text="{Binding StrLat}"      
+                       TextColor="{StaticResource LabelInfoTextColor}"
+                       Margin="0">
+                    <!--<Label.BindingContext>
+                        <viewModels:GeoLocationUpdateViewModel />
+                    </Label.BindingContext>-->
+                </Label>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin ="0"
+                         Padding="0"
+                         HorizontalOptions="FillAndExpand">
+          <!--      x:DataType="viewModels:GeoLocationUpdateViewModel"> -->
+                <Label Text="{i18n:Translate lon}"
+                       WidthRequest="140"/>
+                <Label x:Name="labelLon"
+                       Text="{Binding StrLon}"
+                       TextColor="{StaticResource LabelInfoTextColor}"
+                       WidthRequest="140"
+                       Margin="0">
+                    <!--<Label.BindingContext>
+                        <viewModels:GeoLocationUpdateViewModel />
+                    </Label.BindingContext>-->
+                </Label>
+            </StackLayout>
+            
+            <!-- BUTTON NOW ! -->
+            <Button Text="{i18n:Translate buttonNow}"
+                    Clicked="OnNowClicked"
+                    Command="{Binding NowCommand}"
+                    FontSize="{StaticResource BigFontSize}"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    />
+            
+            <!-- SIGHT DATE AND TIME -->
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="StartAndExpand">
+                <Label Text="{i18n:Translate labelSightTime}"
+                    HorizontalOptions="StartAndExpand"
+                       WidthRequest="140"/>
+                <DatePicker x:Name="SightDateDatePicker"
+                            Margin ="0"
+                            MinimumDate="1/1/2017"
+                            HorizontalOptions="StartAndExpand"
+                            Date="{Binding SightDateTime}"/>
+                <TimePicker x:Name="SightDateTimePicker"
+                            Margin ="0"
+                            HorizontalOptions="StartAndExpand"
+                            Format="HH:mm"
+                            Time="{Binding SightTime}"/>
+                <Label x:Name="deuxpoints"
+                       Text=":"
+                       TextColor="{StaticResource EntryTextColor}"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="0"/>
+                <Picker Title="ss"
+                        Margin ="0"
+                        HorizontalOptions="StartAndExpand"
+                        ItemsSource="{Binding Seconds}"
+                        SelectedIndex="{Binding SightSeconds}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand">
+                <Label x:Name="LatLonLabelFormatWarning"
+                Text="{i18n:Translate labelFormatWarning}"
+                    TextColor="{StaticResource TextWarningColor}"
+                    IsVisible="False"/>
+                <Label x:Name="LatLonLabelFormat"
+                    Text=""
+                    TextColor="{StaticResource TextWarningColor}"
+                    IsVisible="False"/>
+            </StackLayout>
+            
+            <!-- SIGHT LOCATION -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Padding="0">
+                <Label Text="{i18n:Translate lat}" WidthRequest="140" />
+                <Entry x:Name="SightLat"    
+                    WidthRequest="140"
+                    Margin="0"
+                    Text="{Binding SightLatitude}"
+                    Keyboard="Default">
+                </Entry>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                                                 Margin ="0"
+                                                 Padding="0"
+                                                 HorizontalOptions="StartAndExpand" >
+                <Label Text="{i18n:Translate lon}" WidthRequest="140"/>
+                
+                <Entry x:Name="SightLon"
+                           WidthRequest="140"
+                           Margin="0"
+                       Text="{Binding SightLongitude}"
+                   Keyboard="Default">
+                    <Entry.Behaviors>
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+            
+            <!-- SIGHT ALTITUDE -->
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand">
+                <Label x:Name="LabelFormatWarning"
+                Text="{i18n:Translate labelFormatWarning}"
+                    TextColor="{StaticResource TextWarningColor}"
+                    IsVisible="False"/>
+                <Label x:Name="LabelFormat"
+                    Text=""
+                    TextColor="{StaticResource TextWarningColor}"
+                    IsVisible="False"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand"
+                    x:DataType="viewModels:SightPageViewModel">
+                <Label Text="{i18n:Translate labelAltitude}"
+                    HorizontalOptions="Start"
+                    WidthRequest="140"
+                    FontSize="{StaticResource BigFontSize}"/>
+                <Entry x:Name="EntryAltitude"
+                   Text=""
+                   Keyboard="Numeric"
+                   FontSize="{StaticResource BigFontSize}"
+                   ClearButtonVisibility="WhileEditing"
+                   WidthRequest="140"
+                   Focused="OnAltitudeFocused">
+                </Entry>
+            </StackLayout>
+            <!-- TRUE ALTITUDE -->
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand">
+                <Label Text="{i18n:Translate labelTrueAltitude}"
+                    HorizontalOptions="Start"
+                    WidthRequest="140"/>
+                <Label Text="{Binding TrueAltitude}"
+                       TextColor="{StaticResource LabelInfoTextColor}">
+                </Label>
+            </StackLayout>
+            <!-- COMPUTED AZIMUT
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand">
+                <Label Text="{i18n:Translate labelComputedAzimuth}"
+                    HorizontalOptions="Start"
+                    WidthRequest="140"/>
+                <Label Text="{Binding ComputedAltitude}"
+                       TextColor="{StaticResource LabelInfoTextColor}">
+                </Label>
+            </StackLayout> -->
+            <!-- INTERCEPT -->
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand">
+                <Label Text="{i18n:Translate labelInterceptNM}"
+                    HorizontalOptions="Start"
+                    WidthRequest="140"/>
+                <Label Text="{Binding InterceptNM}"
+                       TextColor="{StaticResource LabelInfoTextColor}">
+                </Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                    Margin ="0"
+                    Padding="0"
+                    HorizontalOptions="StartAndExpand">
+                <Button Text="{i18n:Translate buttonCancel}"
+                    Command="{Binding CancelCommand}"
+                        HorizontalOptions="StartAndExpand"
+                    />
+                <Button Text="{i18n:Translate buttonSaveAndQuit}"
+                    Command="{Binding SaveAndQuitCommand}"
+                        HorizontalOptions="StartAndExpand"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

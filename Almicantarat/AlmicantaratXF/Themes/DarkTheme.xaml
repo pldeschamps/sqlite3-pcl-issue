@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        x:Class="AlmicantaratXF.Themes.DarkTheme">
+    <Color x:Key="AppBackgroundColor">#15014E</Color>
+    <Color x:Key="LabelDefaultColor">#15014E</Color>
+    <Color x:Key="EntryDefaultColor">#15014E</Color>
+    <Color x:Key="LabelTextColor">White</Color>
+    <Color x:Key="LabelInfoTextColor">Yellow</Color>
+    <Color x:Key="EntryTextColor">LightGreen</Color>
+    <Color x:Key="DataColor">LightGreen</Color>
+    <Color x:Key="ButtonDefaultColor">LightGreen</Color>
+    <Color x:Key="ButtonTextColor">Black</Color>
+    <Color x:Key="TextWarningColor">Tomato</Color>
+    <Color x:Key="TextRedNightColor">Tomato</Color>
+    <Color x:Key="CellDefaultColor">Navy</Color>
+</ResourceDictionary>

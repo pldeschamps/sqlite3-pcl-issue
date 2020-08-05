@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.SettingsPageXAML"
+             xmlns:i18n="clr-namespace:AlmicantaratXF.Views;assembly=AlmicantaratXF"
+             xmlns:behaviors="clr-namespace:AlmicantaratXF.Behaviors; assembly=AlmicantaratXF"
+             xmlns:viewModels="clr-namespace:AlmicantaratXF.ViewModels; assembly=AlmicantaratXF"
+             Title="{i18n:Translate titleSettings}"
+             BackgroundColor="{StaticResource AppBackgroundColor}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 5" />
+            <On Platform="Android, UWP" Value="10, 0, 10, 5" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.BindingContext>
+        <viewModels:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" >
+                <Setter Property="Keyboard" Value="Numeric" />
+            </Style>
+        </ResourceDictionary> 
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="{i18n:Translate labelTaiUtcUpdate}" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{i18n:Translate labelTaiUtc}" Grid.Row="0" Grid.Column="1" />
+                <DatePicker x:Name="taiUtcUpdateDatePicker"
+                            MinimumDate="1/1/2017"
+                            HorizontalOptions="Fill"
+                            Grid.Row="1" Grid.Column="0"
+                            Date="{Binding TaiUtcLastUpdateInput}"/>
+                <Entry Text="{Binding TaiUtcSecondsInput}" 
+                       MaxLength="3"
+                       Grid.Row="1" Grid.Column="1">
+                </Entry>
+                <Label Text="{i18n:Translate dip}" Grid.Row="2" Grid.Column="0" />
+                <Entry Text="{Binding Dip_input}" 
+                       MaxLength="4"
+                       Grid.Row="2" Grid.Column="1"
+                       Completed="Entry_Completed">
+                    <!--
+                    <Entry.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="Completed" Command="{Binding DipCompletedCommand}"/>
+                    </Entry.Behaviors>-->
+                </Entry>
+                <Label Text="{i18n:Translate index_error}" Grid.Row="3" Grid.Column="0" />
+                <Entry Text="{Binding Index_error_input}" 
+                       MaxLength="4"
+                       Grid.Row="3" Grid.Column="1" />
+                <!-- TODO settings
+                <Label Text="pression atm" Grid.Row="3" Grid.Column="0" />
+                <Label Text="température" Grid.Row="3" Grid.Column="0" />
+                 -->
+            </Grid>
+            <Button Text="{i18n:Translate buttonConstantCorrections}"
+                    Clicked="OnConstantCorrectionsClicked">
+                <!--HorizontalOptions="StartAndExpand" -->
+            </Button>           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

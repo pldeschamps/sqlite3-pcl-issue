@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MainTheme" parent="MainTheme.Base"></style>
+    <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat">
+      <item name="windowNoTitle">true</item>
+      <item name="windowActionBar">false</item>
+      <item name="colorPrimary">#2196F3</item>
+      <item name="colorPrimaryDark">#1976D2</item>
+      <item name="colorAccent">#FF4081</item>
+      <item name="windowActionModeOverlay">true</item>
+      <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+  <!--<style name="AppCompatDialogStyle" parent="Theme.AppCompat">  </style>-->
+
+  <!--
+  <style name="MyTheme" parent="MyTheme.Base">
+    <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+  </style>
+
+  <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    <item name="android:background">@color/material_blue_500</item>
+  </style>
+
+  <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+  -->
+</resources>

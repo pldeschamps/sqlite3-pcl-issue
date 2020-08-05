@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\bad.png" />
+    <None Remove="Images\good.png" />
+    <None Remove="Images\jupiter100.png" />
+    <None Remove="Images\lunea128x244.png" />
+    <None Remove="Images\luneb148x244.png" />
+    <None Remove="Images\lunec198x244.png" />
+    <None Remove="Images\luned244x244.png" />
+    <None Remove="Images\lunee198x244.png" />
+    <None Remove="Images\lunef148x244.png" />
+    <None Remove="Images\luneg128x244.png" />
+    <None Remove="Images\mars100.png" />
+    <None Remove="Images\mercury100.png" />
+    <None Remove="Images\neptune100.png" />
+    <None Remove="Images\saturn100.png" />
+    <None Remove="Images\sun200.png" />
+    <None Remove="Images\sun200bright.png" />
+    <None Remove="Images\uranus100.png" />
+    <None Remove="Images\venus100.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\bad.png" />
+    <EmbeddedResource Include="Views\delete.png" />
+    <EmbeddedResource Include="Images\good.png" />
+    <EmbeddedResource Include="Images\jupiter100.png" />
+    <EmbeddedResource Include="Images\lunea128x244.png" />
+    <EmbeddedResource Include="Images\luneb148x244.png" />
+    <EmbeddedResource Include="Images\lunec198x244.png" />
+    <EmbeddedResource Include="Images\luned244x244.png" />
+    <EmbeddedResource Include="Images\lunee198x244.png" />
+    <EmbeddedResource Include="Images\lunef148x244.png" />
+    <EmbeddedResource Include="Images\luneg128x244.png" />
+    <EmbeddedResource Include="Images\mars100.png" />
+    <EmbeddedResource Include="Images\mercury100.png" />
+    <EmbeddedResource Include="Images\neptune100.png" />
+    <EmbeddedResource Include="Images\saturn100.png" />
+    <EmbeddedResource Include="Images\sun200.png" />
+    <EmbeddedResource Include="Images\sun200bright.png" />
+    <EmbeddedResource Include="Images\uranus100.png" />
+    <EmbeddedResource Include="Images\venus100.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="UrhoSharp.Forms" Version="1.9.67" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\PositionsPage.xaml.cs">
+      <DependentUpon>PositionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CelestialPositionPage.xaml.cs">
+      <DependentUpon>CelestialPositionPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ConstantCorrectionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePageXAML.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PositionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SettingsPageXAML.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CelestialPositionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SightPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

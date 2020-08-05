@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.CelestialPositionPage"
+             xmlns:i18n="clr-namespace:AlmicantaratXF.Views;assembly=AlmicantaratXF"
+             xmlns:viewModels="clr-namespace:AlmicantaratXF.ViewModels;assembly=AlmicantaratXF"
+             xmlns:local="clr-namespace:AlmicantaratXF;assembly=AlmicantaratXF"
+             Title="{i18n:Translate titleCelestialPosition}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 5" />
+            <On Platform="Android, UWP" Value="10, 0, 10, 5" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <!--    <ContentPage.BindingContext>
+        <viewModels:CelestialPositionViewModel/>
+    </ContentPage.BindingContext> -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" >
+                <Setter Property="Keyboard" Value="Numeric" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{i18n:Translate buttonDelete}" Clicked="OnDelete" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="{i18n:Translate labelDateTime}" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{Binding StrDateTime}"  Grid.Row="0" Grid.Column="1"
+                       TextColor="{StaticResource LabelInfoTextColor}"/>
+
+                <Label Text="{i18n:Translate labelPositionMethod}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding StrMethod}"  Grid.Row="1" Grid.Column="1"
+                       TextColor="{StaticResource LabelInfoTextColor}"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="{i18n:Translate lat}" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{Binding StrLat}"  Grid.Row="1" Grid.Column="0"
+                       TextColor="{StaticResource LabelInfoTextColor}"/>
+
+                <Label Text="{i18n:Translate lon}" Grid.Row="0" Grid.Column="1" />
+                <Label Text="{Binding StrLon}"  Grid.Row="1" Grid.Column="1"
+                       TextColor="{StaticResource LabelInfoTextColor}"/>
+            </Grid>            
+            <Button Text="{i18n:Translate buttonNewSight}"
+                    Clicked="OnNewSightClicked">
+                <!--HorizontalOptions="StartAndExpand" -->
+            </Button>
+            <ListView x:Name="listView"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows = "true"
+                      ItemSelected="OnSightSelected"
+                      
+                      BackgroundColor="{StaticResource AppBackgroundColor}">
+                <ListView.Header>
+                    <StackLayout Orientation="Vertical"
+                                 Margin="5"
+                                 Padding="0">
+                        <!--
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="FillAndExpand"
+                                     Padding="0">
+                            <Label Text="{i18n:Translate labelBody}" WidthRequest="140" />
+                            <Label Text="{i18n:Translate labelAltitude}" />
+                        </StackLayout>
+                        -->
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <SwipeView BackgroundColor="{StaticResource AppBackgroundColor}"
+                                       Margin="2">
+                <!--                <StackLayout Orientation="Horizontal" HorizontalOptions="Start"></StackLayout> -->
+                                <SwipeView.LeftItems>
+                                    <SwipeItems Mode="Execute">
+                                        <SwipeItemView Invoked="OnDeleteSight" >
+                                            <StackLayout Orientation="Vertical"
+                                                         
+                                                         BackgroundColor="{StaticResource TextRedNightColor}"
+                                                         VerticalOptions="Center">
+                                                <StackLayout              HorizontalOptions="Start">
+                                                    <Image Source="deleteTomato.png" HeightRequest="40" WidthRequest="40" />
+                                                    <Label Text="{i18n:Translate buttonDelete}"
+                                                           TextColor="White"
+                                                           BackgroundColor="{StaticResource TextRedNightColor}"
+                                                           />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </SwipeItemView>
+                                        <!--<SwipeItem Text="{i18n:Translate buttonDelete}"
+                                                    IconImageSource="delete.png"
+                                                    BackgroundColor="{StaticResource TextRedNightColor}"
+                                                    StyleClass=""
+                                                    Invoked="OnDeleteSight"/>-->
+
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <!--                </StackLayout> -->
+                                <Frame CornerRadius="16" Margin="0" BackgroundColor="{StaticResource CellDefaultColor}"
+                                       HasShadow="False" BorderColor="{StaticResource CellDefaultColor}" >
+                                <StackLayout Orientation="Vertical"
+                                            Margin="1"
+                                            Padding="0"
+                                             BackgroundColor="{StaticResource CellDefaultColor}">
+                                    <Label Text="{Binding StrDateTime}"
+                                        TextColor="{StaticResource LabelInfoTextColor}"
+                                           BackgroundColor="{StaticResource CellDefaultColor}"/>
+                                    <StackLayout Orientation="Horizontal"
+                                                Margin ="0"
+                                                Padding="0"
+                                                HorizontalOptions="FillAndExpand" >
+                                        <Label Text="{Binding StrBody}"
+                                            TextColor="{StaticResource LabelInfoTextColor}"
+                                               BackgroundColor="{StaticResource CellDefaultColor}"
+                                            WidthRequest="140"
+                                            Margin="0"/>
+                                        <Label Text="{Binding StrAltitude}"
+                                            TextColor="{StaticResource LabelInfoTextColor}"
+                                               BackgroundColor="{StaticResource CellDefaultColor}"
+                                            WidthRequest="150" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            </SwipeView>
+                            
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

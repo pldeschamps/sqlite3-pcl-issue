@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.ConstantCorrectionsPage"
+             xmlns:i18n="clr-namespace:AlmicantaratXF.Views;assembly=AlmicantaratXF"
+             xmlns:behaviors="clr-namespace:AlmicantaratXF.Behaviors; assembly=AlmicantaratXF"
+             xmlns:viewModels="clr-namespace:AlmicantaratXF.ViewModels; assembly=AlmicantaratXF"
+             xmlns:model="clr-namespace:AlmicantaratXF.Model"
+             x:DataType="viewModels:ConstantCorrectionsViewModel"
+             Title="{i18n:Translate titleConstantCorrections}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 5" />
+            <On Platform="Android, UWP" Value="10, 0, 10, 5" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.BindingContext>
+        <viewModels:ConstantCorrectionsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView"  SeparatorVisibility="None"
+                ItemsSource="{x:Static viewModels:ConstantCorrectionsViewModel.ConstantCorrections}">
+                <ListView.Header>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" > 
+                            <Label Text="{i18n:Translate labelAt}" WidthRequest="100" />
+                            <Label Text="{i18n:Translate labelCorrection}" />
+                        </StackLayout>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ConstantCorrection">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0">
+                                <Label Text="{Binding StrAt}"
+                                       WidthRequest="100"
+                                       Margin="0"/>
+                                <Entry Text="{Binding StrCorrection}"
+                                       Keyboard="Numeric"
+                                       MaxLength="4"
+                                       WidthRequest="100"
+                                       Margin="0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

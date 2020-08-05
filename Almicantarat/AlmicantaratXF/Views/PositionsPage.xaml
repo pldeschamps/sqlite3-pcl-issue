@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.PositionsPage"
+             xmlns:i18n="clr-namespace:AlmicantaratXF.Views;assembly=AlmicantaratXF"
+             xmlns:viewModels="clr-namespace:AlmicantaratXF.ViewModels;assembly=AlmicantaratXF"
+             Title="{i18n:Translate titleCelestialPositions}"
+             BackgroundColor="{StaticResource AppBackgroundColor}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 5" />
+            <On Platform="Android, UWP" Value="10, 0, 10, 5" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.BindingContext>
+        <viewModels:PositionsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" >
+                <Setter Property="Keyboard" Value="Numeric" />
+            </Style>
+        </ResourceDictionary> 
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="{i18n:Translate buttonNewCelestialPosition}"
+                    Clicked="OnNewCelestialPositionClicked">
+                <!-- HorizontalOptions="StartAndExpand"-->
+            </Button>
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+            <ListView x:Name="listView"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows = "true"
+                      ItemSelected="OnCelestialPositionSelected"
+                      ItemsSource="{x:Static viewModels:PositionsViewModel.Positions}">
+                <!--      ItemsSource="{Binding Positions}"> -->
+
+
+                <ListView.Header>
+                    <StackLayout Orientation="Vertical"
+                                 Margin="5"
+                                 Padding="0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Label Text="{i18n:Translate lat}" WidthRequest="140" />
+                            <Label Text="{i18n:Translate lon}" />
+                        </StackLayout>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical"
+                                         Margin="5"
+                                         Padding="0">
+                                <Label Text="{Binding StrDateTime}"
+                                       TextColor="{StaticResource LabelInfoTextColor}" />
+                                <StackLayout Orientation="Horizontal"
+                                             Margin ="0"
+                                             Padding="0"
+                                             HorizontalOptions="FillAndExpand" >
+                                    <Label Text=""
+                                           TextColor="{StaticResource LabelInfoTextColor}"
+                                           WidthRequest="140"
+                                           Margin="0"/>
+                                    <Label Text="" 
+                                           TextColor="{StaticResource LabelInfoTextColor}"
+                                           WidthRequest="150"
+                                           Margin="0"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

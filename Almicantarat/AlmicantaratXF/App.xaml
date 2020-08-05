@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlmicantaratXF.Views.App">
+    <Application.Resources>
+        <ResourceDictionary Source="Themes/DarkTheme.xaml">
+
+            <Thickness x:Key="PageMargin" Left="20" Top="20" Right="20" Bottom="20"/>
+
+
+            <!-- Colors 
+            <Color x:Key="AppBackgroundColor">Gray</Color>
+            <Color x:Key="LabelDefaultColor">DimGray</Color>
+            <Color x:Key="EntryDefaultColor">DimGray</Color>
+            <Color x:Key="LabelTextColor">White</Color>
+            <Color x:Key="LabelInfoTextColor">Yellow</Color>
+            <Color x:Key="EntryTextColor">LightGreen</Color>
+            <Color x:Key="DataColor">LightGreen</Color>
+            <Color x:Key="ButtonDefaultColor">LightGray</Color>
+            <Color x:Key="ButtonTextColor">Black</Color>
+            <Color x:Key="TextWarningColor">Tomato</Color>-->
+
+            <x:Double x:Key="AppFontSize">14</x:Double>
+            <x:Double x:Key="BigFontSize">22</x:Double>
+            <x:String x:Key="AppFontSizeString">Medium</x:String>
+            <!-- Implicit styles -->
+            
+            <Style TargetType="{x:Type NavigationPage}">
+                <Setter Property="BarBackgroundColor"
+                        Value="Black" />
+                <Setter Property="BarTextColor"
+                        Value="White" />
+            </Style>
+
+            <Style x:Key ="FrameStyle" TargetType="{x:Type Frame}">
+                <Setter Property="BackgroundColor" Value="{StaticResource CellDefaultColor}" />
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="4" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+            <Style TargetType="{x:Type ContentPage}"
+                   ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource AppBackgroundColor}" />
+            </Style>
+            <Style TargetType="Entry" >
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource EntryDefaultColor}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource EntryTextColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" >
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource LabelDefaultColor}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource LabelTextColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource ButtonDefaultColor}"/>
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}"/>
+                <Setter Property="TextColor"
+                        Value="{StaticResource ButtonTextColor}"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource EntryDefaultColor}"/>
+                <Setter Property="TextColor"
+                        Value="{StaticResource EntryTextColor}"/>
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}"/>
+            </Style>
+            <Style TargetType="TimePicker">
+                    <Setter Property="BackgroundColor"
+                        Value="{StaticResource EntryDefaultColor}"/>
+                    <Setter Property="TextColor"
+                        Value="{StaticResource EntryTextColor}"/>
+                    <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource EntryDefaultColor}"/>
+                <Setter Property="TextColor"
+                        Value="{StaticResource EntryTextColor}"/>
+                <Setter Property="FontSize"
+                        Value="{StaticResource AppFontSize}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

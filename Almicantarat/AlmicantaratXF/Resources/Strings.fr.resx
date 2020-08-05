@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonConstantCorrections" xml:space="preserve">
+    <value>Je possède le certificat du sextant</value>
+  </data>
+  <data name="buttonNewCelestialPosition" xml:space="preserve">
+    <value>Nouveau Point Astro</value>
+  </data>
+  <data name="buttonNewSight" xml:space="preserve">
+    <value>Nouvelle Hauteur</value>
+  </data>
+  <data name="Celestial" xml:space="preserve">
+    <value>Astronomique</value>
+  </data>
+  <data name="DeadReckoning" xml:space="preserve">
+    <value>Estime</value>
+  </data>
+  <data name="dip" xml:space="preserve">
+    <value>Hauteur de l'œil (m)</value>
+  </data>
+  <data name="htmlStringPractice1" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta content="text/html; charset=UTF-8" http-equiv="content-type"&gt;
+    &lt;style&gt;
+      img {
+  		width:70%;
+
+        text-align: center;
+  		height:auto;
+			}
+      p,h1,h2
+      {
+        font-family: Cambria;
+      }
+    &lt;/style&gt;
+    &lt;title&gt;navigation astronomique pratique partie 1&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;La navigation astronomique - Pratique - Partie 1&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="htmlStringPractice2" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta content="text/html; charset=UTF-8" http-equiv="content-type"&gt;
+    &lt;style&gt;
+      img {
+  		width:70%;
+
+        text-align: center;
+  		height:auto;
+			}
+      p,h1,h2
+      {
+        font-family: Cambria;
+      }
+    &lt;/style&gt;
+    &lt;title&gt;navigation astronomique pratique partie 2&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;La navigation astronomique - Pratique - Partie 2&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="htmlStringTheory1" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta content="text/html; charset=UTF-8" http-equiv="content-type"&gt;
+    &lt;style&gt;
+      img {
+  		width:70%;
+
+        text-align: center;
+  		height:auto;
+			}
+      p,h1,h2
+      {
+        font-family: Cambria;
+      }
+    &lt;/style&gt;
+    &lt;title&gt;navigation astronomique theorie&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;La navigation astronomique - Théorie - Partie 1&lt;/h1&gt;
+    &lt;p&gt;La navigation astronomique est l’art de déterminer sa position
+      géographique par l’observation des astres.&lt;/p&gt;
+    &lt;h2&gt;Préambule&lt;/h2&gt;
+    &lt;p&gt;Cet article se limite aux seules connaissances théoriques nécessaires à
+      l’emploi d’un sextant et du logiciel Almicantarat.&lt;/p&gt;
+    &lt;h2&gt;Hauteur des astres&lt;/h2&gt;
+    &lt;p&gt;Le calcul de la position astronomique repose sur la mesure, par
+      l’observateur, de la hauteur des astres et sur l’heure des mesures.&lt;/p&gt;
+    &lt;img title="Hauteur et horizon" alt="Hauteur_Horizon" src="g3910.png"&gt;&lt;br&gt;
+    La hauteur d’un astre est l’angle, au point d’observation, entre l’astre et
+    l’horizon. Elle est mesurée à l’aide d’un sextant. Elle impose donc que
+    l’astre et l’horizon soient visibles simultanément.&lt;br&gt;
+    &lt;img title="Sextant" alt="Sextant" src="g3920.png"&gt;
+    &lt;h2&gt;Cercle de hauteur&lt;/h2&gt;
+    &lt;p&gt;L’heure et l’identification de l’astre permet de déterminer la position
+      géographique à la verticale de l’astre. La hauteur h permet de tracer un
+      cercle autour de cette position appelé « cercle de hauteur ». Le rayon de
+      ce cercle est égal à 90° - h.&lt;/p&gt;
+    &lt;p&gt;&lt;img title="Cercle de hauteur" alt="cercle_de_hauteur" src="g3930.png"&gt;&lt;br&gt;
+      Quiconque situé sur ce cercle au même instant observerait cet astre sous
+      la même hauteur. &lt;br&gt;
+      Ainsi, Identifier un astre, mesurer sa hauteur et noter l’heure de la
+      mesure suffisent à tracer un cercle passant par la position de
+      l’observateur à l’heure de la mesure.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="htmlStringTheory2" xml:space="preserve">
+    <value>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta content="text/html; charset=UTF-8" http-equiv="content-type"&gt;
+    &lt;style&gt;
+      img {
+  		width:70%;
+			text-align: center;
+  		height:auto;
+			}
+      p,h1,h2
+      {
+        font-family: Cambria;
+      }
+    &lt;/style&gt;
+    &lt;title&gt;navigation astronomique theorie&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;La navigation astronomique - Théorie - Partie 2&lt;/h1&gt;
+    &lt;h2&gt;Calcul de la position&lt;/h2&gt;
+    Trois hauteurs ou plus permettent donc de tracer des cercles dont
+    l’intersection est la position de l’observateur.&lt;br&gt;
+    &lt;img title="Trois cercles de hauteur" alt="3_cercles-hauteur" src="theory22.png"&gt;&lt;br&gt;
+    Si les hauteurs sont mesurées à des heures différentes, il est nécessaire de
+    connaître le déplacement (route et distance) effectué par l’observateur
+    entre chaque mesure. Ainsi, mesurer la hauteur du Soleil à trois instants
+    différents de la journée est suffisant pour calculer sa position
+    géographique. Dans ce cas, le déplacement de l’observateur entre chaque
+    mesure doit être pris en compte dans le calcul.&lt;br&gt;
+    &lt;h2&gt;Précision des mesures&lt;/h2&gt;
+    L’incertitude sur la position calculée dépend de l’incertitude de mesure de
+    la hauteur, de l’incertitude de l’heure et de la précision des calculs
+    d’éphémérides.&lt;br&gt;
+    Un sextant de qualité offre une mesure de hauteur au dixième de minute près
+    ce qui se traduit par une incertitude d’un dixième de mille nautique sur le
+    calcul de la position, soit environ 200m.&lt;br&gt;
+    Comme le point à la verticale de l’astre parcours environ 15° par heure, il
+    parcourt un quart de minute d’arc par seconde de temps. Une incertitude
+    d’une seconde sur l’heure de la mesure se traduit par une incertitude d’un
+    quart de minute de longitude sur le calcul de la position, soit environ 500m
+    pour un observateur situé à l’équateur et 350m pour un observateur au large
+    des côtes françaises.&lt;br&gt;
+    Enfin, les calculs d’éphémérides sont plus précis que 0.3 secondes d’arc.
+    L’incertitude de calcul qui en découle est donc inférieure à 10m.&lt;br&gt;
+    &lt;br&gt;
+    &lt;table style="width: 100%" border="1"&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Instrument&lt;/td&gt;
+          &lt;td&gt;Incertitude&lt;/td&gt;
+          &lt;td&gt;Erreur sur la position&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Sextant&lt;/td&gt;
+          &lt;td&gt;0.1 '&lt;/td&gt;
+          &lt;td&gt;0.1 MN (≈ 200 m)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Chronomètre (Latitude = 40°)&lt;/td&gt;
+          &lt;td&gt;1 s&lt;/td&gt;
+          &lt;td&gt;0.25MN (≈ 350 m)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Éphémérides&lt;/td&gt;
+          &lt;td&gt;&amp;lt; 0.3 ”&lt;/td&gt;
+          &lt;td&gt;&amp;lt; 10 m&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;br&gt;
+    La qualité de la position géographique calculée dépend donc principalement
+    de la rigueur et de l’habileté de l’observateur qui manipule le sextant.
+  &lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="index_error" xml:space="preserve">
+    <value>Correction de collimation (minutes,décimales)</value>
+    <comment>la correction à apporter : l'opposé de la collimation</comment>
+  </data>
+  <data name="Inertial" xml:space="preserve">
+    <value>Inertiel</value>
+  </data>
+  <data name="labelAt" xml:space="preserve">
+    <value>Angle lu (°)</value>
+  </data>
+  <data name="labelCorrection" xml:space="preserve">
+    <value>Correction (secondes)</value>
+  </data>
+  <data name="labelDateTime" xml:space="preserve">
+    <value>Date/Heure</value>
+  </data>
+  <data name="labelPositionMethod" xml:space="preserve">
+    <value>Méthode</value>
+  </data>
+  <data name="lat" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="lon" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="part1" xml:space="preserve">
+    <value>Partie 1</value>
+  </data>
+  <data name="part2" xml:space="preserve">
+    <value>Partie 2</value>
+  </data>
+  <data name="practice" xml:space="preserve">
+    <value>Pratique</value>
+  </data>
+  <data name="quizz" xml:space="preserve">
+    <value>Quiz</value>
+  </data>
+  <data name="quizzPractice1Q1" xml:space="preserve">
+    <value>Pratique partie 1 Q1</value>
+  </data>
+  <data name="quizzPractice1Q1BadAnswer1" xml:space="preserve">
+    <value>Pratique partie 1 Q1 bad answer 1</value>
+  </data>
+  <data name="quizzPractice1Q1BadAnswer2" xml:space="preserve">
+    <value>Pratique partie 1 Q1 bad answer 2</value>
+  </data>
+  <data name="quizzPractice1Q1GoodAnswer" xml:space="preserve">
+    <value>Pratique partie 1 Q1 good answer</value>
+  </data>
+  <data name="quizzPractice1Q2BadAnswer1" xml:space="preserve">
+    <value>Pratique partie 1 Q2 bad answer 1</value>
+  </data>
+  <data name="quizzPractice1Q2BadAnswer2" xml:space="preserve">
+    <value>Pratique partie 1 Q2 bad answer 2</value>
+  </data>
+  <data name="quizzPractice1Q2GoodAnswer" xml:space="preserve">
+    <value>Pratique partie 1 Q2 good answer</value>
+  </data>
+  <data name="quizzPractice2Q1" xml:space="preserve">
+    <value>Pratique partie 2 Q1</value>
+  </data>
+  <data name="quizzPractice2Q1BadAnswer1" xml:space="preserve">
+    <value>Pratique partie 2 Q1 bad answer 1</value>
+  </data>
+  <data name="quizzPractice2Q1BadAnswer2" xml:space="preserve">
+    <value>Pratique partie 2 Q1 bad answer 2</value>
+  </data>
+  <data name="quizzPractice2Q1GoodAnswer" xml:space="preserve">
+    <value>Pratique partie 2 Q1 good answer</value>
+  </data>
+  <data name="quizzPractice2Q2" xml:space="preserve">
+    <value>Pratique partie 2 Q2</value>
+  </data>
+  <data name="quizzPractice2Q2BadAnswer1" xml:space="preserve">
+    <value>Pratique partie 2 Q2 mauvaise réponse 1</value>
+  </data>
+  <data name="quizzPractice2Q2BadAnswer2" xml:space="preserve">
+    <value>Pratique partie 2 mauvaise réponse 2</value>
+  </data>
+  <data name="quizzPractice2Q2GoodAnswer" xml:space="preserve">
+    <value>Pratique partie 2 Q2 bonne réponse</value>
+  </data>
+  <data name="quizzPracticeQ2" xml:space="preserve">
+    <value>Pratique partie 1 Q2</value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>Bien !</value>
+  </data>
+  <data name="Satellite" xml:space="preserve">
+    <value>Satellite</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="theory" xml:space="preserve">
+    <value>Théorie</value>
+  </data>
+  <data name="titleCelestialPosition" xml:space="preserve">
+    <value>Point Astro</value>
+  </data>
+  <data name="titleCelestialPositions" xml:space="preserve">
+    <value>Points Astronomiques</value>
+  </data>
+  <data name="titleConstantCorrections" xml:space="preserve">
+    <value>Correction fixe (ou table d'excentricité)</value>
+  </data>
+  <data name="wrong" xml:space="preserve">
+    <value>Faux...</value>
+  </data>
+  <data name="buttonNow" xml:space="preserve">
+    <value>Top mesure !</value>
+  </data>
+  <data name="labelBodyType" xml:space="preserve">
+    <value>Astre</value>
+  </data>
+  <data name="moon" xml:space="preserve">
+    <value>Lune</value>
+  </data>
+  <data name="planet" xml:space="preserve">
+    <value>Planète</value>
+  </data>
+  <data name="star" xml:space="preserve">
+    <value>Étoile</value>
+  </data>
+  <data name="sun" xml:space="preserve">
+    <value>Soleil</value>
+  </data>
+  <data name="titleSight" xml:space="preserve">
+    <value>Hauteur</value>
+    <comment>exact translation would be "Observation"</comment>
+  </data>
+  <data name="buttonDelete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="deleteAnyway" xml:space="preserve">
+    <value>Supprimer quand même</value>
+  </data>
+  <data name="messageDeletePosition" xml:space="preserve">
+    <value>Cette action va supprimer le point et toutes les hauteurs mesurées</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Attention !</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="Jupiter" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="labelAltitude" xml:space="preserve">
+    <value>Hauteur</value>
+  </data>
+  <data name="labelBody" xml:space="preserve">
+    <value>Astre</value>
+  </data>
+  <data name="limb" xml:space="preserve">
+    <value>Bord</value>
+  </data>
+  <data name="lower" xml:space="preserve">
+    <value>Inférieur</value>
+  </data>
+  <data name="Mars" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="Mercury" xml:space="preserve">
+    <value>Mercure</value>
+  </data>
+  <data name="messageDeleteSight" xml:space="preserve">
+    <value>Cette hauteur sera supprimée</value>
+  </data>
+  <data name="Neptune" xml:space="preserve">
+    <value>Neptune</value>
+  </data>
+  <data name="Saturn" xml:space="preserve">
+    <value>Saturne</value>
+  </data>
+  <data name="upper" xml:space="preserve">
+    <value>Supérieur</value>
+  </data>
+  <data name="Uranus" xml:space="preserve">
+    <value>Uranus</value>
+  </data>
+  <data name="Venus" xml:space="preserve">
+    <value>Venus</value>
+  </data>
+  <data name="titleSettings" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="labelCurrentTime" xml:space="preserve">
+    <value>Heure actuelle</value>
+  </data>
+  <data name="positionTypeUnknown" xml:space="preserve">
+    <value>Inconnu</value>
+  </data>
+  <data name="labelSightTime" xml:space="preserve">
+    <value>Heure de l'observation</value>
+  </data>
+  <data name="labelCurrentSunSemiDiameterMinutes" xml:space="preserve">
+    <value>Demi-diamètre du Soleil actuel (min)</value>
+  </data>
+  <data name="labelTaiUtc" xml:space="preserve">
+    <value>TAI-UTC (s)</value>
+  </data>
+  <data name="labelTaiUtcUpdate" xml:space="preserve">
+    <value>Dernière mise à jour TAI-UTC</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="buttonSaveAndQuit" xml:space="preserve">
+    <value>Enregistrer, Quitter</value>
+  </data>
+  <data name="labelFormatWarning" xml:space="preserve">
+    <value>Le format doit être de la forme :</value>
+  </data>
+  <data name="labelTrueAltitude" xml:space="preserve">
+    <value>Hauteur vraie</value>
+  </data>
+  <data name="skyMap" xml:space="preserve">
+    <value>Planétarium</value>
+  </data>
+  <data name="checkBoxNames" xml:space="preserve">
+    <value>Noms des astres</value>
+  </data>
+  <data name="labelBodysName" xml:space="preserve">
+    <value>Nom de l'astre</value>
+  </data>
+  <data name="buttonSetAsNewFix" xml:space="preserve">
+    <value>Définir la position ci-dessus comme nouvelle référence de l'estime</value>
+  </data>
+  <data name="labelCurrentPositionAndTime" xml:space="preserve">
+    <value>Position et heure actuelles</value>
+  </data>
+  <data name="labelDeadReckoning" xml:space="preserve">
+    <value>Position estimée</value>
+  </data>
+  <data name="labelDeviceLocation" xml:space="preserve">
+    <value>Position du téléphone</value>
+  </data>
+  <data name="alertLocationPermission" xml:space="preserve">
+    <value>Position de l'appareil</value>
+  </data>
+  <data name="answerNo" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="answerYes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="labelFixTime" xml:space="preserve">
+    <value>Heure de référence de l'estime</value>
+  </data>
+  <data name="questionLocationPermission" xml:space="preserve">
+    <value>Pour afficher la carte du ciel il est nécessaire de connaître votre position. Voulez-vous autoriser Almicantarat à accéder à la position de votre appareil ?</value>
+  </data>
+  <data name="titleDeadReckoning" xml:space="preserve">
+    <value>Localisation de l'appareil</value>
+  </data>
+  <data name="labelHeading" xml:space="preserve">
+    <value>Route fond</value>
+  </data>
+  <data name="labelSpeed" xml:space="preserve">
+    <value>Vitesse (noeuds)</value>
+  </data>
+  <data name="buttonSelectOnSkyView" xml:space="preserve">
+    <value>Sélectionner l'astre sur le planétarium</value>
+  </data>
+  <data name="buttonSelectACircledStar" xml:space="preserve">
+    <value>Sélectionnez un astre cerclé</value>
+  </data>
+  <data name="buttonShootThisBody" xml:space="preserve">
+    <value>CHOISIR CET ASTRE</value>
+  </data>
+  <data name="labelComputedAzimuth" xml:space="preserve">
+    <value>Azimut calculé</value>
+  </data>
+  <data name="labelInterceptNM" xml:space="preserve">
+    <value>Intercept (MN)</value>
+  </data>
+</root>
